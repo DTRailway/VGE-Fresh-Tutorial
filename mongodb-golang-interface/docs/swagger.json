@@ -1,0 +1,102 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "基于Golang和MongoDB构建的分布式系统核心接口\\n\\n**环境地址**\\n- 项目地址：`https://github.com/DTRailway/VGE-Fresh-Tutorial`\\n- 小组网站：`http://www.vrlab.org.cn/`",
+        "title": "VGE团队·数据模型知识分布式组织管理引擎API文档",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "name": "API Support",
+            "url": "http://www.swagger.io/support",
+            "email": "support@swagger.io"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0"
+    },
+    "host": "localhost:8080",
+    "basePath": "/vge",
+    "paths": {
+        "/users": {
+            "post": {
+                "description": "接收JSON数据创建新用户",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "users"
+                ],
+                "summary": "创建用户",
+                "parameters": [
+                    {
+                        "description": "用户信息",
+                        "name": "user",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/models.UserResponse"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "models.CreateRequest": {
+            "type": "object",
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "age": {
+                    "description": "Age (non-negative integer)",
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "name": {
+                    "description": "Username (min 2 chars)",
+                    "type": "string",
+                    "minLength": 2
+                }
+            }
+        },
+        "models.UserResponse": {
+            "type": "object",
+            "properties": {
+                "age": {
+                    "description": "User's age in years",
+                    "type": "integer"
+                },
+                "id": {
+                    "description": "Unique user identifier",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "User's display name",
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "securityDefinitions": {
+        "BasicAuth": {
+            "type": "basic"
+        }
+    },
+    "externalDocs": {
+        "description": "OpenAPI",
+        "url": "https://swagger.io/resources/open-api/"
+    }
+}

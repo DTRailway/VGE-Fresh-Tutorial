@@ -1,0 +1,71 @@
+basePath: /vge
+definitions:
+  models.CreateRequest:
+    properties:
+      age:
+        description: Age (non-negative integer)
+        minimum: 0
+        type: integer
+      name:
+        description: Username (min 2 chars)
+        minLength: 2
+        type: string
+    required:
+    - name
+    type: object
+  models.UserResponse:
+    properties:
+      age:
+        description: User's age in years
+        type: integer
+      id:
+        description: Unique user identifier
+        type: string
+      name:
+        description: User's display name
+        type: string
+    type: object
+externalDocs:
+  description: OpenAPI
+  url: https://swagger.io/resources/open-api/
+host: localhost:8080
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: 基于Golang和MongoDB构建的分布式系统核心接口\n\n**环境地址**\n- 项目地址：`https://github.com/DTRailway/VGE-Fresh-Tutorial`\n-
+    小组网站：`http://www.vrlab.org.cn/`
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: VGE团队·数据模型知识分布式组织管理引擎API文档
+  version: "1.0"
+paths:
+  /users:
+    post:
+      consumes:
+      - application/json
+      description: 接收JSON数据创建新用户
+      parameters:
+      - description: 用户信息
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.UserResponse'
+      summary: 创建用户
+      tags:
+      - users
+securityDefinitions:
+  BasicAuth:
+    type: basic
+swagger: "2.0"
