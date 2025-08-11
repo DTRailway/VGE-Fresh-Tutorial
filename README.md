@@ -59,14 +59,14 @@ VGE-Fresh-Tutorial/
 
 ### 1) 📂 [cpp-linked-list](./cpp-linked-list)
 **定位**：掌握 C++ 指针、引用、值传递差异，危险指针演示与智能指针 RAII；实现带哨兵节点的单向链表（增删查改反转遍历）。  
-**亮点**：指针算术、const 正确性、安全内存操作、链表边界检查。  
+**要点**：指针算术、const 正确性、安全内存操作、链表边界检查。  
 **快速上手**：MSVC 2017打开工程文件, 选中一个启动方案并设置为启动项目, 编译执行
 
 ---
 
 ### 2) 📂 [go-gin-http](./go-gin-http)
 **定位**：使用 Gin 框架快速构建 HTTP 服务，包括 GET 查询、POST 文件上传、静态文件访问和 302 重定向。  
-**亮点**：极简 API 示例，Postman / curl 测试。  
+**要点**：极简 API 示例，Postman / curl 测试。  
 **快速上手**：
 ```bash
 cd go-gin-http
@@ -79,7 +79,7 @@ go build main.go && ./main
 
 ### 3) 📂 [mongodb-golang-interface](./mongodb-golang-interface)
 **定位**：Go + MongoDB REST 接口开发，配套 Swagger/Postman 测试。  
-**亮点**：Docker 一键启动 Mongo 与可视化管理面板，标准化接口开发。  
+**要点**：Docker 一键启动 Mongo 与可视化管理面板，标准化接口开发。  
 **快速上手**：
 ```bash
 cd mongodb-golang-interface
@@ -92,7 +92,7 @@ go run main.go
 
 ### 4) 📂 [raster-analysis-model](./raster-analysis-model)
 **定位**：3x3 栅格平均值计算模型，演示工程化数据读写与计算。  
-**亮点**：CLI 运行参数、日志记录、CSV 输出。  
+**要点**：CLI 运行参数、日志记录、CSV 输出。  
 **快速上手**：
 ```bash
 cd raster-analysis-model
@@ -104,7 +104,7 @@ go build main.go && ./main -input ./demoData/input.txt -output ./demoData/output
 
 ### 5) 📂 [vue-cesium-platform](./vue-cesium-platform)
 **定位**：Vue3 + CesiumJS 3D 数字地球可视化演示。  
-**亮点**：地形/影像/标注加载，交互控制，Cesium Ion Token 集成。  
+**要点**：地形/影像/标注加载，交互控制，Cesium Ion Token 集成。  
 **快速上手**：
 ```bash
 cd vue-cesium-platform
