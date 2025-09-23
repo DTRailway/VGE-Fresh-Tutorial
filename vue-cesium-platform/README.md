@@ -79,6 +79,11 @@
 npm config set registry https://registry.npmmirror.com
 ```
 
+#### 添加自定义二次开发Cesium
+
+在小组内部找丁老师24级硕士程泽坤同学获取定制版Cesium包，下载后解压到项目的`public/libs`目录下。
+
+
 ---
 
 ### 获取代码
